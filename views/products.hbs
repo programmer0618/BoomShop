@@ -1,0 +1,46 @@
+{{#if myProducts.length}}
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {{#each myProducts}}
+      <div class="col mb-3">
+        <div class="card h-100 shadow-sm">
+          <img src={{image}} alt="img" />
+          <div class="card-body bottom1">
+            <p class="card-text fw-bold">{{title}}</p>
+            <p class="card-text">{{description}}</p>
+            <div
+              class="d-flex justify-content-between bottom2 gap-2 align-items-center"
+            >
+              <div class="avatar m-0 p-0">
+                <p class="m-0 p-0">{{getFullNameFirstCharacter
+                    user.firstName
+                    user.lastName
+                  }}</p>
+              </div>
+              <p class="p-0 m-0">{{user.firstName}} {{user.lastName}}</p>
+              <small class="text-body-secondary fs-5">{{price}}.00$</small>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    {{/each}}
+  </div>
+{{else}}
+  <section class="page_404 w-75 mx-auto">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="col-sm-10 col-sm-offset-1 text-center">
+          <div class="four_zero_four_bg">
+            <h1 class="text-center">404</h1>
+          </div>
+          <div class="contant_box_404">
+            <h3 class="h2">
+              Add new products
+            </h3>
+            <a href="/add" class="btn btn-primary btn-lg mb-5">Add products</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{/if}}
